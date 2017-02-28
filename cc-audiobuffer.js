@@ -1,3 +1,7 @@
+/**
+ * Created by ChanChun on 17-2-27.
+ */
+
 export default class CCAudioBuffer {
     constructor(AudioUrlBag) {
         this.AudioUrlBag = AudioUrlBag || new Array()
