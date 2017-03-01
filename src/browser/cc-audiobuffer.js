@@ -2,7 +2,7 @@
  * Created by ChanChun on 17-2-28.
  */
 
-export default class CCAudioBuffer {
+class CCAudioBuffer {
     constructor(AudioUrlBag) {
         this.AudioUrlBag = AudioUrlBag || new Array()
         this.currentAudio = null
