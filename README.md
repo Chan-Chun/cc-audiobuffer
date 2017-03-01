@@ -36,7 +36,7 @@ import CCAudioBuffer from 'cc-audiobuffer'
 
 ## 使用 Use
 
-**无参数创建 Create without argument **
+**无参数创建 Create without argument**
 
 ```javascript
 let CCAudioBuffer = new CCAudioBuffer()
