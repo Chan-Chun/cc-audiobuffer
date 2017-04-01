@@ -6,6 +6,7 @@ class CCAudioBuffer {
     constructor(AudioUrlBag) {
         this.AudioUrlBag = AudioUrlBag || new Array()
         this.currentAudio = null
+        _play()
     }
     pushBuffer(url) {
         if(!this.isHasCurrentAudio()){
@@ -20,16 +21,16 @@ class CCAudioBuffer {
             this.AudioUrlBag.push(audio)
         }
     }
-    shiftBuffer() {
+    _shiftBuffer() {
         return this.AudioUrlBag.shift()
     }
-    isHasBuffer() {
+    _isHasBuffer() {
         return this.AudioUrlBag.length > 0
     }
-    isHasCurrentAudio(){
+    _isHasCurrentAudio(){
         return this.currentAudio
     }
-    play() {
+    _play() {
         const _this = this
         if (this.isHasBuffer()) {
             this.currentAudio = this.shiftBuffer()
