@@ -6,7 +6,7 @@ class CCAudioBuffer {
     constructor(AudioUrlBag) {
         this.AudioUrlBag = AudioUrlBag || new Array()
         this.currentAudio = null
-        _play();
+        this._play();
     }
     pushBuffer(url) {
         if(!this.isHasCurrentAudio()){

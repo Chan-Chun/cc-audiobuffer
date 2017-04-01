@@ -64,9 +64,11 @@ CCAudioBuffer.pushBuffer('url')
 
 When you create CCAudioBuffer with arguments, argements must be an array of audio.
 
-接下来需要调用`play()` 接口保证参数内的Audio播放
 
-Then ,calling `play()` method  to play those audio in the arguments.
+
+[正在实现]创建CCAudioBuffer时候就能自动播放
+
+[coding]Auto play when CCAudioBuffer is created
 
 
 
