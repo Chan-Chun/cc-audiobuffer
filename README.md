@@ -48,27 +48,24 @@ CCAudioBuffer.pushBuffer('url')
 
 When there has new url of audio,CCAudioBuffer will preload and autoplay this aduio.Whenever you call `pushBuffer('url')`, those audio will enter the buffer one by one and autoplay till buffer is empty. 
 
-
+---
 
 **有参数创建 Create with arguments**
 
 ```javascript
 let CCAudioBuffer= new CCAudioBuffer([new Audio('url'),new Audio('url'),new Audio('url')])
 
-CCAudioBuffer.play()
-
 CCAudioBuffer.pushBuffer('url')
 ```
 
-当你有参数创建时，参数规定是Audio对象的一个数组。
+> 当你有参数创建时，参数规定是Audio对象的一个数组。
 
-When you create CCAudioBuffer with arguments, argements must be an array of audio.
+> When you create CCAudioBuffer with arguments, argements must be an array of audio.
 
 
+> **创建CCAudioBuffer时候内部语音自动播放**
 
-[正在实现]创建CCAudioBuffer时候就能自动播放
-
-[coding]Auto play when CCAudioBuffer is created
+> **Auto play when CCAudioBuffer is created**
 
 
 
