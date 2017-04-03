@@ -6,8 +6,9 @@ export default class CCAudioBuffer {
     constructor(AudioUrlBag) {
         this.AudioUrlBag = AudioUrlBag || new Array()
         this.currentAudio = null
+        _play()
     }
-    pushBuffer(url) {
+    _pushBuffer(url) {
         if(!this.isHasCurrentAudio()){
             let audio = new Audio(url)
             audio.preload = "auto"
@@ -23,13 +24,13 @@ export default class CCAudioBuffer {
     shiftBuffer() {
         return this.AudioUrlBag.shift()
     }
-    isHasBuffer() {
+    _isHasBuffer() {
         return this.AudioUrlBag.length > 0
     }
-    isHasCurrentAudio(){
+    _isHasCurrentAudio(){
         return this.currentAudio
     }
-    play() {
+    _play() {
         const _this = this
         if (this.isHasBuffer()) {
             this.currentAudio = this.shiftBuffer()
