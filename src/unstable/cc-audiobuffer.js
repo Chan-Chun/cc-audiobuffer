@@ -53,7 +53,7 @@
 function CCAudioBuffer (AudioUrlBag) {
     var AudioUrlBag = AudioUrlBag || new Array()
     var currentAudio = null
-    _play()
+    _playNext()
     function _shiftBuffer() {
         return AudioUrlBag.shift()
     }
@@ -63,19 +63,31 @@ function CCAudioBuffer (AudioUrlBag) {
     function _isHasCurrentAudio(){
         return currentAudio
     }
-    function _play() {
+    function _playNext() {
         const _this = this
-        if (isHasBuffer()) {
+        if (_isHasBuffer()) {
             currentAudio = shiftBuffer()
             currentAudio._play()
             _this.currentAudio.addEventListener('ended', function () {
-                _this.play()
+                _this.playNext()
             }, false)
         }else{
             this.currentAudio=null
         }
     }
     return {
-
+        pushBuffer(url) {
+            if(!this.isHasCurrentAudio()){
+                let audio = new Audio(url)
+                audio.preload = "auto"
+                this.AudioUrlBag.push(audio)
+                this.play()
+            }
+            else{
+                let audio = new Audio(url)
+                audio.preload = "auto"
+                this.AudioUrlBag.push(audio)
+            }
+        }
     }
 }()
