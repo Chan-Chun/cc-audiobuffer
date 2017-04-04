@@ -7,8 +7,8 @@
  */
 
 /*写一个封装 模块模式*/
-let CCAudioBuffer = function (audioUrlBag) {
-    let audioUrlBag = audioUrlBag || new Array()
+let CCAudioBuffer = function (audioUrlList) {
+    let audioUrlBag = audioUrlList || new Array()
     let currentAudio = null
     _playNext()
     function _shiftBuffer() {
@@ -33,7 +33,7 @@ let CCAudioBuffer = function (audioUrlBag) {
     }
     return {
         pushBuffer(url) {
-            if(!isHasCurrentAudio()){
+            if(!_isHasCurrentAudio()){
                 let audio = new Audio(url)
                 audio.preload = "auto"
                 audioUrlBag.push(audio)
@@ -46,4 +46,4 @@ let CCAudioBuffer = function (audioUrlBag) {
             }
         }
     }
-}()
+}
