@@ -3,40 +3,40 @@
  */
 
 export default class CCAudioBuffer {
-    constructor(AudioUrlBag) {
-        this.AudioUrlBag = AudioUrlBag || new Array()
+    constructor(audioUrlBag) {
+        this.audioUrlBag = audioUrlBag || new Array()
         this.currentAudio = null
-        _play()
+        this._playNext();
     }
-    _pushBuffer(url) {
-        if(!this.isHasCurrentAudio()){
+    pushBuffer(url) {
+        if(!this._isHasCurrentAudio()){
             let audio = new Audio(url)
             audio.preload = "auto"
-            this.AudioUrlBag.push(audio)
-            this.play()
+            this.audioUrlBag.push(audio)
+            this._playNext()
         }
         else{
             let audio = new Audio(url)
             audio.preload = "auto"
-            this.AudioUrlBag.push(audio)
+            this.audioUrlBag.push(audio)
         }
     }
-    shiftBuffer() {
-        return this.AudioUrlBag.shift()
+    _shiftBuffer() {
+        return this.audioUrlBag.shift()
     }
     _isHasBuffer() {
-        return this.AudioUrlBag.length > 0
+        return this.audioUrlBag.length > 0
     }
     _isHasCurrentAudio(){
         return this.currentAudio
     }
-    _play() {
+    _playNext() {
         const _this = this
-        if (this.isHasBuffer()) {
-            this.currentAudio = this.shiftBuffer()
+        if (this._isHasBuffer()) {
+            this.currentAudio = this._shiftBuffer()
             this.currentAudio.play()
-            _this.currentAudio.addEventListener('ended', function () {
-                _this.play()
+            this.currentAudio.addEventListener('ended', function () {
+                _this._playNext()
             }, false)
         }else{
             this.currentAudio=null

@@ -7,39 +7,67 @@
  */
 
 
-class CCAudioBuffer {
-    constructor(AudioUrlBag) {
-        this.AudioUrlBag = AudioUrlBag || new Array()
-        this.currentAudio = null
-        this._play();
+// class CCAudioBuffer {
+//     constructor(AudioUrlBag) {
+//         this.AudioUrlBag = AudioUrlBag || new Array()
+//         this.currentAudio = null
+//         this._play();
+//     }
+//     pushBuffer(url) {
+//         if(!this.isHasCurrentAudio()){
+//             let audio = new Audio(url)
+//             audio.preload = "auto"
+//             this.AudioUrlBag.push(audio)
+//             this.play()
+//         }
+//         else{
+//             let audio = new Audio(url)
+//             audio.preload = "auto"
+//             this.AudioUrlBag.push(audio)
+//         }
+//     }
+//     _shiftBuffer() {
+//         return this.AudioUrlBag.shift()
+//     }
+//     _isHasBuffer() {
+//         return this.AudioUrlBag.length > 0
+//     }
+//     _isHasCurrentAudio(){
+//         return this.currentAudio
+//     }
+//     _play() {
+//         const _this = this
+//         if (this.isHasBuffer()) {
+//             this.currentAudio = this.shiftBuffer()
+//             this.currentAudio.play()
+//             _this.currentAudio.addEventListener('ended', function () {
+//                 _this.play()
+//             }, false)
+//         }else{
+//             this.currentAudio=null
+//         }
+//     }
+// }
+
+/*写一个封装 模块模式*/
+function CCAudioBuffer (AudioUrlBag) {
+    var AudioUrlBag = AudioUrlBag || new Array()
+    var currentAudio = null
+    _play()
+    function _shiftBuffer() {
+        return AudioUrlBag.shift()
     }
-    pushBuffer(url) {
-        if(!this.isHasCurrentAudio()){
-            let audio = new Audio(url)
-            audio.preload = "auto"
-            this.AudioUrlBag.push(audio)
-            this.play()
-        }
-        else{
-            let audio = new Audio(url)
-            audio.preload = "auto"
-            this.AudioUrlBag.push(audio)
-        }
+    function _isHasBuffer() {
+        return AudioUrlBag.length > 0
     }
-    _shiftBuffer() {
-        return this.AudioUrlBag.shift()
+    function _isHasCurrentAudio(){
+        return currentAudio
     }
-    _isHasBuffer() {
-        return this.AudioUrlBag.length > 0
-    }
-    _isHasCurrentAudio(){
-        return this.currentAudio
-    }
-    _play() {
+    function _play() {
         const _this = this
-        if (this.isHasBuffer()) {
-            this.currentAudio = this.shiftBuffer()
-            this.currentAudio.play()
+        if (isHasBuffer()) {
+            currentAudio = shiftBuffer()
+            currentAudio._play()
             _this.currentAudio.addEventListener('ended', function () {
                 _this.play()
             }, false)
@@ -47,4 +75,7 @@ class CCAudioBuffer {
             this.currentAudio=null
         }
     }
-}
+    return {
+
+    }
+}()

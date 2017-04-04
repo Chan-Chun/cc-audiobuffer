@@ -13,51 +13,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 
 var CCAudioBuffer = function () {
-    function CCAudioBuffer(AudioUrlBag) {
+    function CCAudioBuffer(audioUrlBag) {
         _classCallCheck(this, CCAudioBuffer);
 
-        this.AudioUrlBag = AudioUrlBag || new Array();
+        this.audioUrlBag = audioUrlBag || new Array();
         this.currentAudio = null;
+        this._playNext();
     }
 
     _createClass(CCAudioBuffer, [{
         key: "pushBuffer",
         value: function pushBuffer(url) {
-            if (!this.isHasCurrentAudio()) {
+            if (!this._isHasCurrentAudio()) {
                 var audio = new Audio(url);
                 audio.preload = "auto";
-                this.AudioUrlBag.push(audio);
-                this.play();
+                this.audioUrlBag.push(audio);
+                this._playNext();
             } else {
                 var _audio = new Audio(url);
                 _audio.preload = "auto";
-                this.AudioUrlBag.push(_audio);
+                this.audioUrlBag.push(_audio);
             }
         }
     }, {
-        key: "shiftBuffer",
-        value: function shiftBuffer() {
-            return this.AudioUrlBag.shift();
+        key: "_shiftBuffer",
+        value: function _shiftBuffer() {
+            return this.audioUrlBag.shift();
         }
     }, {
-        key: "isHasBuffer",
-        value: function isHasBuffer() {
-            return this.AudioUrlBag.length > 0;
+        key: "_isHasBuffer",
+        value: function _isHasBuffer() {
+            return this.audioUrlBag.length > 0;
         }
     }, {
-        key: "isHasCurrentAudio",
-        value: function isHasCurrentAudio() {
+        key: "_isHasCurrentAudio",
+        value: function _isHasCurrentAudio() {
             return this.currentAudio;
         }
     }, {
-        key: "play",
-        value: function play() {
+        key: "_playNext",
+        value: function _playNext() {
             var _this = this;
-            if (this.isHasBuffer()) {
-                this.currentAudio = this.shiftBuffer();
+            if (this._isHasBuffer()) {
+                this.currentAudio = this._shiftBuffer();
                 this.currentAudio.play();
-                _this.currentAudio.addEventListener('ended', function () {
-                    _this.play();
+                this.currentAudio.addEventListener('ended', function () {
+                    _this._playNext();
                 }, false);
             } else {
                 this.currentAudio = null;

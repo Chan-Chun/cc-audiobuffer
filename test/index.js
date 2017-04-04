@@ -1,8 +1,7 @@
 window.onload = function () {
   let audioBuffer = new CCAudioBuffer([
-    new Audio('/uploads/1')
+    new Audio('./uploads/1')
   ]);
-  audioBuffer.play()
-  audioBuffer.pushBuffer('/uploads/2')
-  setTimeout(()=>{audioBuffer.pushBuffer('/uploads/3')},10000)
+  audioBuffer.pushBuffer('./uploads/2')
+  setTimeout(()=>{audioBuffer.pushBuffer('./uploads/3')},10000)
 }
