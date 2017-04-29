@@ -1,6 +1,6 @@
 {
   "name": "cc-audiobuffer",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "cc-audiobuffer helps you splice audio fragments",
   "main": "dist/cc-audiobuffer.js",
   "directories": {
