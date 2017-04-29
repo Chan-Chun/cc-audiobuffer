@@ -8,16 +8,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by ChanChun on 17-4-29.
  */
 
-var AudioBuffer = function () {
-    function AudioBuffer(audioUrlBag) {
-        _classCallCheck(this, AudioBuffer);
+var CCAudioBuffer = function () {
+    function CCAudioBuffer(audioUrlBag) {
+        _classCallCheck(this, CCAudioBuffer);
 
         this.audioUrlBag = audioUrlBag || new Array();
         this.currentAudio = null;
         this._playNext();
     }
 
-    _createClass(AudioBuffer, [{
+    _createClass(CCAudioBuffer, [{
         key: "pushBuffer",
         value: function pushBuffer(url) {
             if (!this._isHasCurrentAudio()) {
@@ -84,5 +84,5 @@ var AudioBuffer = function () {
         }
     }]);
 
-    return AudioBuffer;
+    return CCAudioBuffer;
 }();

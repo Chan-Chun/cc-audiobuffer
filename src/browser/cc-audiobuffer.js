@@ -2,7 +2,7 @@
  * Created by ChanChun on 17-4-29.
  */
 
-class AudioBuffer {
+class CCAudioBuffer {
     constructor(audioUrlBag) {
         this.audioUrlBag = audioUrlBag || new Array()
         this.currentAudio = null
