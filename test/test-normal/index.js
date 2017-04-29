@@ -20,3 +20,28 @@ firstTest.onclick = function () {
   setTimeout(()=>{AudioBuffer.pushBuffer('../uploads/3')},10000)
 }
 
+var secondTestLoad = document.getElementById("secondTestLoad")
+var secondTestContinue = document.getElementById("secondTestContinue")
+var secondTestPause = document.getElementById("secondTestPause")
+var secondTestClear = document.getElementById("secondTestClear")
+let AudioBuffer2
+
+secondTestLoad.onclick = function () {
+  AudioBuffer2= new CCAudioBuffer([
+    new Audio('../uploads/1'),
+    new Audio('../uploads/2'),
+    new Audio('../uploads/3')
+  ]);
+}
+
+secondTestPause.onclick = function () {
+  AudioBuffer2.pauseBuffer()
+}
+
+secondTestContinue.onclick = function () {
+  AudioBuffer2.continueBuffer()
+}
+
+secondTestClear.onclick = function () {
+  AudioBuffer2.clearBuffer()
+}

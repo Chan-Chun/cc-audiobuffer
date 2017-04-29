@@ -1,6 +1,8 @@
 # cc-audiobuffer
 
 > 版本2.1.2 Version 2.1.2
+>
+> 接下来的计划：单例模式、报错处理
 
 ## 简介 Introduction
 
