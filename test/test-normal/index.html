@@ -5,12 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+  <style>
+    .div-border {
+      border: 1px black solid;
+    }
+  </style>
   <body>
-    这里有三段语音<br>
-    一段是CCArrayBuffer类初始化创建的<br>
-    第二段是后来插入进去的<br>
-    第三段是在一开始10秒钟之后才插入进去的
-    连成一段完整的语音
+    <div class="div-border">
+      <button id="firstTest">测试一</button>
+      <p>
+        测试一<br>
+        这里有三段语音<br>
+        一段是CCArrayBuffer类初始化创建的<br>
+        第二段是立即插入Buffer的，但是还是在第一段语音播放完之后才播放<br>
+        第三段是在第一段语音插入10秒钟之后才插入Buffer的<br>
+        最终三段语音连成一段完整的语音
+      </p>
+    </div>
+    <div class="div-border">
+        <button></button> 
+    </div>
      <script src="./index.js">
      </script>
      <script src="./cc-audiobuffer.js">
