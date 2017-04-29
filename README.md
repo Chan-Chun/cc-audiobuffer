@@ -1,6 +1,6 @@
 # cc-audiobuffer
 
-> 近期将会推出2.0版本 敬请期待 Version 2.0 will be published soon!
+> 版本2.1.0 Version 2.1.0
 
 ## 简介 Introduction
 
