@@ -1,6 +1,6 @@
 # cc-audiobuffer
 
-> 版本2.1.0 Version 2.1.0
+> 版本2.1.2 Version 2.1.2
 
 ## 简介 Introduction
 
