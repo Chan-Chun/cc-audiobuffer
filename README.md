@@ -2,7 +2,6 @@
 
 > 版本2.1.2 Version 2.1.2
 >
-> 接下来的计划：单例模式、报错处理
 
 ## 简介 Introduction
 
@@ -74,6 +73,12 @@ CCAudioBuffer.pushBuffer('url')
 `pushBuffer()` 的作用和无参数创建一样。
 
 `pushBuffer()` method is the same above.
+
+
+
+> 接下来的计划：单例模式、报错处理、暂停播放优化
+>
+> Next Version: Singleton、Error Handling、Optimized Play & Pause Code
 
 
 
