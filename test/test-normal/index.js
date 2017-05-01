@@ -35,7 +35,11 @@ secondTestLoad.onclick = function () {
 }
 
 secondTestPause.onclick = function () {
-  AudioBuffer2.pauseBuffer()
+  if(AudioBuffer2) {
+    AudioBuffer2.pauseBuffer()
+  }else {
+    console.log('') 
+  }
 }
 
 secondTestContinue.onclick = function () {
