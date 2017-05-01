@@ -38,14 +38,25 @@ secondTestPause.onclick = function () {
   if(AudioBuffer2) {
     AudioBuffer2.pauseBuffer()
   }else {
-    console.log('') 
+    alert('Did not load audio')
+    console.log('Did not load audio') 
   }
 }
 
 secondTestContinue.onclick = function () {
-  AudioBuffer2.continueBuffer()
+  if(AudioBuffer2) {
+    AudioBuffer2.continueBuffer()
+  }else {
+    alert('Did not load audio')
+    console.log('Did not load audio') 
+  }
 }
 
 secondTestClear.onclick = function () {
-  AudioBuffer2.clearBuffer()
+  if(AudioBuffer2) {
+    AudioBuffer2.clearBuffer()
+  }else {
+    alert('Did not load audio')
+    console.log('Did not load audio') 
+  }
 }

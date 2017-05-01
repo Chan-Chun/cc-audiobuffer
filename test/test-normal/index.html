@@ -16,11 +16,12 @@
   <div class="div-border">
     <button id="firstTest">测试一</button>
     <p>
-      测试一<br> 这里有三段语音
-      <br> 一段是CCArrayBuffer类初始化创建的
-      <br> 第二段是立即插入Buffer的，但是还是在第一段语音播放完之后才播放
-      <br> 第三段是在第一段语音插入10秒钟之后才插入Buffer的
-      <br> 最终三段语音连成一段完整的语音
+      <span>测试一</span><br> 
+      <span>这里有三段语音</span><br>
+      <span>一段是CCArrayBuffer类初始化创建的</span><br>
+      <span>第二段是立即插入Buffer的，但是还是在第一段语音播放完之后才播放</span><br>
+      <span>第三段是在第一段语音插入10秒钟之后才插入Buffer的</span><br>
+      <span>最终三段语音连成一段完整的语音</span>
     </p>
   </div>
   <div class="div-border">
@@ -29,7 +30,12 @@
     <button id="secondTestPause">暂停语音</button>
     <button id="secondTestClear">清空语音</button>
     <p>
-
+      <span>测试二</span><br> 
+      <span>载入语音按钮先一次性创建CCAudioBuffer并同时加载三段语音</span><br>
+      <span>暂停按钮暂停当前播放的那一段语音（如果有）</span><br>
+      <span>开始按钮开始播放之前暂停的那一段语音（如果有）</span><br>
+      <span>暂停按钮暂停播放之前暂停的那一段语音（如果有）</span><br>
+      <span>清空按钮清空当前还未播放但是加载过的语音（如果有）</span>
     </p>
   </div>
   <script src="./index.js">
